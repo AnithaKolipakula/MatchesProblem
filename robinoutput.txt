@@ -1,0 +1,23 @@
+enter number of teams
+5
+India
+America
+Australia
+somalia
+Argentina
+[India vs America, India vs Australia, India vs somalia, India vs Argentina, America vs Australia, America vs somalia, America vs Argentina, Australia vs somalia, Australia vs Argentina, somalia vs Argentina]
+Day1
+India vs America
+Australia vs Argentina
+Day2
+America vs somalia
+India vs Australia
+Day3
+somalia vs Argentina
+America vs Australia
+Day4
+India vs somalia
+America vs Argentina
+Day5
+Australia vs somalia
+India vs Argentina
