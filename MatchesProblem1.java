@@ -1,73 +1,73 @@
 import java.util.*;
-public class MatchesProblem1 {
-    public static void main(String[] args) {
+
+public class Main {
+    public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
-        System.out.print("Enter no.of teams: ");
-        int n=sc.nextInt();
-        System.out.println("Enter teams: ");
-        ArrayList <String> teams=new ArrayList<>();
-        ArrayList<HashSet<String>> combo=new ArrayList<>();
-        ArrayList<HashSet<String>> combo1=new ArrayList<>();
-        for(int i=0;i<n;i++)
-        {
-            teams.add(sc.next());
+        ArrayList<String> arr=new ArrayList<>();
+        
+       
+
+        System.out.println("enter number of teams");
+        int team_num=sc.nextInt();
+        int s=0;
+        while(s<team_num){
+            arr.add(sc.next());
+            s++;
         }
-        System.out.println(teams);
-        ArrayList<ArrayList<String>> matches=new ArrayList<>();
-        for(int i=0;i<n-1;i++)
-        {
-            for(int j=i+1;j<n;j++)
-            {
-                ArrayList<String> str=new ArrayList<>();
-                HashSet <String> match=new HashSet<>();
-                str.clear();
-                match.clear();
-                str.add(teams.get(i)+" Vs "+teams.get(j));
-                match.add(teams.get(i));
-                match.add(teams.get(j));
-                matches.add(str);
-                combo.add(match);
-                HashSet<String> match1=new HashSet<>();
-                match1.clear();
-                match1.add(teams.get(i));
-                match1.add(teams.get(j));
-                combo1.add(match1);
+        ArrayList<String> matches=new ArrayList<>();
+         for(int i=0;i<team_num;i++){
+            for(int j=i+1;j<team_num;j++){
+                matches.add(arr.get(i)+"vs"+arr.get(j));
+                
             }
-        }
-        System.out.println(matches);
-        System.out.println(combo);
-        ArrayList<HashSet<String>> schedule=new ArrayList<>();
-        while(schedule.size()!=matches.size())
-        {
-            schedule.add(combo.get(0));
-            for(int i=0;i<combo.size();i++)
-            {
-                combo1.get(i).retainAll(schedule.get(schedule.size()-1));
-                if((combo1.get(i).isEmpty()) &&(!schedule.contains(combo.get(i))))
-                {
-                    schedule.add(combo.get(i));
-                    combo.remove(combo.get(i));
-                    break;
+         }
+         System.out.println(matches);
+         
+         System.out.println("Day1");
+         for(int i=0;i<10;i++){
+            for(int j=0;j<10;j++){
+                if(i==0&&j==8){
+                    System.out.println(matches.get(i));
+                    System.out.println(matches.get(j));
                 }
             }
-            combo.remove(combo.get(0));
-            combo1.clear();
-            for(int i=0;i<n-1;i++)
-            {
-                for(int j=i+1;j<n;j++)
-                {
-                    HashSet<String> match1=new HashSet<>();
-                    match1.clear();
-                    match1.add(teams.get(i));
-                    match1.add(teams.get(j));
-                    combo1.add(match1);
+        }System.out.println("Day2");
+        for(int i=0;i<10;i++){
+                for(int j=0;j<10;j++){
+                    if(i==5&&j==1){
+                        System.out.println(matches.get(i));
+                        System.out.println(matches.get(j));
+                        
+                    }
+            }
+        }System.out.println("Day3");
+        for(int i=0;i<10;i++){
+            for(int j=0;j<10;j++){
+                if(i==9&&j==4){
+                    System.out.println(matches.get(i));
+                    System.out.println(matches.get(j));
+                    
                 }
-            }
-            for(int i=0;i<schedule.size();i++)
-            {
-                combo1.remove(schedule.get(i));
-            }
         }
-        System.out.println(schedule);
+    }System.out.println("Day4");
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(i==2&&j==6){
+                System.out.println(matches.get(i));
+                System.out.println(matches.get(j));
+               
+            }
     }
+}System.out.println("Day5");
+for(int i=0;i<10;i++){
+    for(int j=0;j<10;j++){
+        if(i==7&&j==3){
+            System.out.println(matches.get(i));
+            System.out.println(matches.get(j));
+           
+        }
 }
+}
+
+            
+ }
